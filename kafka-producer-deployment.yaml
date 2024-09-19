@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-producer-ex
+  labels:
+    app: kafka-producer-ex
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-producer-ex
+  template:
+    metadata:
+      labels:
+        app: kafka-producer-ex
+    spec:
+      containers:
+      - name: kafka-producer-ex
+        image: aruna451/kafka-producer-ex:v1.0
+        ports:
+        - containerPort: 9191
+
+
